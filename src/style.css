@@ -1,0 +1,82 @@
+*, *::before, *::after {
+    font-family: 'Fira Sans', sans-serif;
+    box-sizing: border-box;
+    color: #FAFAFA;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    height: 100vh;
+}
+
+ul {
+    list-style-type: none;  
+    display: flex;  
+}
+
+li {
+    margin-right: 25px;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 8px;
+    padding: 8px;
+    transition: .3s;
+}
+
+li:hover {
+    background-color: rgba(165, 165, 165, .4);
+    transition: .3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-bar-main {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    padding: 5px;
+    z-index: 1;
+}
+
+.tesla-logo {
+    margin-left: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#logo-img {
+    width: 120px;
+    height: 14px;
+}
+
+.section-car-1 {
+    background-image: url("../src/images/tesla-section-1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.section-car-2 {
+    background-image: url("../src/images/tesla-section-2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.section-car-3 {
+    background-image: url("../src/images/tesla-section-3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.section-car-4 {
+    background-image: url("../src/images/tesla-section-4.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
