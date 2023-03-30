@@ -1,10 +1,23 @@
 *, *::before, *::after {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
     color: #FAFAFA;
     margin: 0;
     padding: 0;
     border: 1px solid red;
+    letter-spacing: 0.8px;
+}
+
+/* Line down middle of page */
+/* FOR DEBUGGING */
+body:after {
+    content:"";
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 1px dotted #444; /*change these values to suit your liking*/
 }
 
 section {
@@ -13,6 +26,13 @@ section {
     max-width: 100vw;
 }
 
+
+
+
+
+/*          */
+/*  HEADER  */
+/*          */
 ol {
     list-style-type: none;  
     display: flex;  
@@ -38,14 +58,6 @@ a {
     text-decoration: none;
 }
 
-button {
-    width: 280px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    font-weight: 300;
-    font-size: 16px;
-}
 
 .tesla-main-bg {
     display: flex;
@@ -64,35 +76,46 @@ button {
     z-index: 1;
 }
 
-
-.tesla-logo {
+.nav-ul-end, .nav-ul-middle, .nav-ul-start {
     display: flex;
-    flex-wrap: wrap;
-    align-content: center;
     width: 33%;
 }
 
-#tesla-logo-svg {
+.nav-ul-start {
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.nav-ul-start > #tesla-logo-svg {
     margin-left: 12px;
 }
 
+.nav-ul-middle {
+    justify-content: center;
+}
+
 .nav-ul-end {
-    display: flex;
-    width: 33%;
     justify-content: end;
 }
 
 
-/* Section 1 (Main page) */
+
+
+
+/*             */
+/*  SECTION 1  */
+/* (Main Page) */
 .section-car-1 {
     background-image: url("../src/images/tesla-section-1.jpg");
-
+    
 }
 
 .car-title-wrapper {
-    height: 100%;
-    flex: 0 0 100%;
+    top: 90px;
     display: flex;
+    width: 100svw;
+    width: 100vw;
+    position: absolute;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -105,9 +128,18 @@ button {
     flex-flow: column nowrap;
 }
 
-.title-of-car {
-    font-weight: 600;
+.telsa-model-name {
+    font-weight: 300;
     font-size: 50px;
+}
+
+button {
+    width: 280px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 300;
+    font-size: 16px;
 }
 
 .btn-inventory {
