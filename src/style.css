@@ -17,7 +17,7 @@ body:after {
     top: 0;
     bottom: 0;
     left: 50%;
-    border-left: 1px dotted #444; /*change these values to suit your liking*/
+    border: 1px dotted red; /*change these values to suit your liking*/
 }
 
 section {
@@ -78,7 +78,7 @@ a {
 
 .nav-ul-end, .nav-ul-middle, .nav-ul-start {
     display: flex;
-    width: 33%;
+    width: 32%;
 }
 
 .nav-ul-start {
@@ -92,6 +92,7 @@ a {
 
 .nav-ul-middle {
     justify-content: center;
+    margin-left: 19px;
 }
 
 .nav-ul-end {
@@ -111,11 +112,11 @@ a {
 }
 
 .car-title-wrapper {
-    top: 90px;
+    top: 140px;
     display: flex;
     width: 100svw;
     width: 100vw;
-    position: absolute;
+    position: fixed;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -128,9 +129,31 @@ a {
     flex-flow: column nowrap;
 }
 
-.telsa-model-name {
+.tesla-model-name {
     font-weight: 300;
     font-size: 50px;
+}
+
+.tesla-model-name, .car-description-main-fadein {
+    margin-right: 13px;
+}
+
+.tesla-car-main-bottom {
+    margin-top: 33%;
+    width: 590px;
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: column nowrap;
+}
+
+.tesla-car-main-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tesla-car-main-bottom-link {
+    display: flex;
+    justify-content: center;
 }
 
 button {
