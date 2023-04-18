@@ -1,15 +1,64 @@
 const carTitleH1 = document.querySelector('.tesla-model-name');
 
+// SMooth scroll between sections with arrow keys
+window.addEventListener("keydown", (e) => {
+    let scrollY = window.pageYOffset;
+    let pHeight = window.innerHeight;
+    
+    var key = e.key;
+
+    e.preventDefault();
+
+    // Scroll DOWN
+    if (key === "ArrowDown") {
+        if (scrollY < pHeight) {
+            document.getElementById('section-car-2').scrollIntoView({
+                behavior: "smooth"
+            });
+        } else if (scrollY >= pHeight && scrollY < pHeight * 2) {
+            document.getElementById('section-car-3').scrollIntoView({
+                behavior: "smooth"
+            });
+        } else if (scrollY >= pHeight * 2 && scrollY < pHeight * 3) {
+            document.getElementById('section-car-4').scrollIntoView({
+                behavior: "smooth"
+            });
+        } else if (scrollY >= pHeight * 3 && scrollY < pHeight * 4) {
+            document.getElementById('section-car-5').scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    }
+
+    // Scroll UP
+    else if (key === "ArrowUp") {
+        if (scrollY >= pHeight && scrollY < pHeight * 2) {
+            document.getElementById('section-car-1').scrollIntoView({
+                behavior: "smooth"
+            });
+        } else if (scrollY >= pHeight * 2 && scrollY < pHeight * 3) {
+            document.getElementById('section-car-2').scrollIntoView({
+                behavior: "smooth"
+            });
+        } else if (scrollY >= pHeight * 3 && scrollY < pHeight * 4) {
+            document.getElementById('section-car-3').scrollIntoView({
+                behavior: "smooth"
+            });
+        } else if (scrollY >= pHeight * 4 && scrollY <= pHeight * 5) {
+            document.getElementById('section-car-4').scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    }
+
+})
+
 // Change model name when scrolling down
 window.addEventListener('scroll', () => {
     let scrollY = window.pageYOffset;
     let pHeight = window.innerHeight;
-    let bufferTransition = 300;
 
-    console.log(`Page height: ${pHeight}`);
     carTitleH1.style.transition - "all 2s";
-
-    console.log(`Current height: ${scrollY}`);
 
     switch (true) {
 
