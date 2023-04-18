@@ -8,6 +8,10 @@
     letter-spacing: 0.8px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Line down middle of page */
 /* FOR DEBUGGING */
 /* body:after {
