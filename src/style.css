@@ -195,3 +195,9 @@ a {
 .section-car-4 {
     background-image: url("../src/images/tesla-section-4.jpg");
 }
+
+.section-car-5 {
+    background-image: url("../src/images/tesla-section-5.jpg");
+    background-size: contain;
+    background-position: center;
+}
