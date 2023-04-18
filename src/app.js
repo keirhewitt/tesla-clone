@@ -17,6 +17,7 @@ window.addEventListener('scroll', () => {
         case scrollY < (pHeight * 0.8):
             carTitleH1.style.opacity = "1";
             carTitleH1.innerHTML = "Model S";
+            carTitleH1.style.color = "white";
             break;
         case scrollY > (pHeight * 0.8) && scrollY < (pHeight * 0.9):
             carTitleH1.style.opacity = 0;
@@ -26,6 +27,7 @@ window.addEventListener('scroll', () => {
         case scrollY > (pHeight * 0.9) && scrollY < ((pHeight * 2) * 0.8): 
             carTitleH1.style.opacity = "1";
             carTitleH1.innerHTML = "Model 3";
+            carTitleH1.style.color = "white";
             break;
         case scrollY > ((pHeight * 2) * 0.8) && scrollY < ((pHeight * 2) * 0.9): 
             carTitleH1.style.opacity = "0";
@@ -35,6 +37,7 @@ window.addEventListener('scroll', () => {
         case scrollY > ((pHeight * 2) * 0.9) && scrollY < ((pHeight * 3) * 0.8): 
             carTitleH1.style.opacity = "1";
             carTitleH1.innerHTML = "Model X";
+            carTitleH1.style.color = "white";
             break;
         case scrollY > ((pHeight * 3) * 0.8) && scrollY < ((pHeight * 3) * 0.9): 
             carTitleH1.style.opacity = "0";
@@ -44,6 +47,17 @@ window.addEventListener('scroll', () => {
         case scrollY > ((pHeight * 3) * 0.9) && scrollY < ((pHeight * 4) * 0.8): 
             carTitleH1.style.opacity = "1";
             carTitleH1.innerHTML = "Model Y";
+            carTitleH1.style.color = "white";
+            break;
+        case scrollY > ((pHeight * 4) * 0.8) && scrollY < ((pHeight * 4) * 0.9): 
+            carTitleH1.style.opacity = "0";
+            break;
+
+        /* PAGE 5 */
+        case scrollY > ((pHeight * 4) * 0.95): 
+            carTitleH1.style.opacity = "1";
+            carTitleH1.innerHTML = "Accessories";
+            carTitleH1.style.color = "black";
             break;
     }
 })
