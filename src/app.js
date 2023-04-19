@@ -1,6 +1,43 @@
 const carTitleH1 = document.querySelector('.tesla-model-name');
+const carTitleDescription = document.querySelector('.car-description-main-fadein');
 
-// SMooth scroll between sections with arrow keys
+// Inventory and Order buttons
+const inventoryButton = document.querySelector('.btn-inventory'); 
+const orderButton = document.querySelector('.btn-order'); 
+
+// Init Car Title and Sub-title for fade + transform transitions
+carTitleH1.classList.add('fade')
+carTitleDescription.classList.add('fade');
+
+// Init buttons for fade in
+inventoryButton.classList.add('fade')
+orderButton.classList.add('fade');
+
+carTitleH1.style.transform = "translateY(20px)";
+carTitleDescription.style.transform = "translateX(40px)";
+
+inventoryButton.style.transform = "translateX(-60px)";
+orderButton.style.transform = "translateX(60px)";
+
+
+// Translate all elems back to normal on page load
+document.addEventListener("DOMContentLoaded", () => {
+    window.setTimeout(() => {
+        carTitleH1.classList.remove('fade');
+        carTitleH1.style.transform = "translateY(0px)";
+
+        carTitleDescription.classList.remove('fade');
+        carTitleDescription.style.transform = "translateX(0px)";
+
+        inventoryButton.classList.remove('fade');
+        inventoryButton.style.transform = "translateX(0px)";
+
+        orderButton.classList.remove('fade');
+        orderButton.style.transform = "translateX(0px)";
+    }, 330);
+});
+
+// Smooth scroll between sections with arrow keys
 window.addEventListener("keydown", (e) => {
     let scrollY = window.pageYOffset;
     let pHeight = window.innerHeight;
