@@ -131,9 +131,25 @@ a {
 }
 
 .tesla-model-name {
-    font-weight: 300;
+    opacity: 1;
+    transition-duration: 1.5s;
+    font-weight: 500;
     font-size: 50px;
     transition: 300ms ease-in-out;
+}
+
+/* On Page load transition */
+.tesla-model-name.fade {
+    opacity: 0;
+}
+
+.car-description-main-fadein {
+    opacity: 1;
+    transition-duration: 1s;
+}
+
+.car-description-main-fadein.fade {
+    opacity: 0;
 }
 
 .tesla-model-name, .car-description-main-fadein {
@@ -141,7 +157,7 @@ a {
 }
 
 .tesla-car-main-bottom {
-    margin-top: 33%;
+    margin-top: 640px;
     
     display: flex;
     flex: 1 1 auto;
@@ -149,6 +165,7 @@ a {
 }
 
 .tesla-car-main-btns {
+    width: 552px;
     display: flex;
     justify-content: space-between;
 }
@@ -156,22 +173,33 @@ a {
 .tesla-car-main-bottom-link {
     display: flex;
     justify-content: center;
-    height: 60px;
+    height: 80px;
     align-items: center;
     text-decoration: underline;
 }
 
+.tesla-car-main-bottom-link a {
+    font-size: 14px;
+}
+
 .btn-inventory,
 .btn-order {
-    width: 280px;
+    opacity: 1;
+    transition-duration: 1.4s;
+    width: 264px;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 3px;
     border: none;
     font-weight: 300;
     font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btn-inventory.fade,
+.btn-order.fade {
+    opacity: 0;
 }
 
 .btn-inventory {
@@ -183,7 +211,6 @@ a {
 .btn-order {
     color:rgba(23, 26, 32);
     background-color: rgba(255, 255, 245, 0.9);
-    margin-left: 5px;
 }
 
 
