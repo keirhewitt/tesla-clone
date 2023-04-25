@@ -1,9 +1,15 @@
 const carTitleH1 = document.querySelector('.tesla-model-name');
 const carTitleDescription = document.querySelector('.car-description-main-fadein');
 
+const testDriveDiv = document.querySelector('.tesla-car-main-bottom-link');
+const testDrive = document.querySelector('#test-drive-desc');
+
+const buttonDiv = document.querySelector('.tesla-car-main-btns');
+
 // Inventory and Order buttons
 const inventoryButton = document.querySelector('.btn-inventory'); 
 const orderButton = document.querySelector('.btn-order'); 
+const learnMoreButton = document.querySelector('.btn-learn-more');
 
 // Init Car Title and Sub-title for fade + transform transitions
 carTitleH1.classList.add('fade')
@@ -18,6 +24,9 @@ carTitleDescription.style.transform = "translateX(40px)";
 
 inventoryButton.style.transform = "translateX(-60px)";
 orderButton.style.transform = "translateX(60px)";
+
+// On page load, remove the learn more button
+buttonDiv.removeChild(learnMoreButton);
 
 
 // Translate all elems back to normal on page load
@@ -49,42 +58,28 @@ window.addEventListener("keydown", (e) => {
     // Scroll DOWN
     if (key === "ArrowDown") {
         if (scrollY < pHeight) {
-            document.getElementById('section-car-2').scrollIntoView({
-                behavior: "smooth"
-            });
+            document.getElementById('section-car-2').scrollIntoView();
         } else if (scrollY >= pHeight && scrollY < pHeight * 2) {
-            document.getElementById('section-car-3').scrollIntoView({
-                behavior: "smooth"
-            });
+            document.getElementById('section-car-3').scrollIntoView();
+            SolarAndPowerwallSectionTransition();
         } else if (scrollY >= pHeight * 2 && scrollY < pHeight * 3) {
-            document.getElementById('section-car-4').scrollIntoView({
-                behavior: "smooth"
-            });
+            document.getElementById('section-car-4').scrollIntoView();
         } else if (scrollY >= pHeight * 3 && scrollY < pHeight * 4) {
-            document.getElementById('section-car-5').scrollIntoView({
-                behavior: "smooth"
-            });
+            document.getElementById('section-car-5').scrollIntoView();
         }
     }
 
     // Scroll UP
     else if (key === "ArrowUp") {
         if (scrollY >= pHeight && scrollY < pHeight * 2) {
-            document.getElementById('section-car-1').scrollIntoView({
-                behavior: "smooth"
-            });
+            document.getElementById('section-car-1').scrollIntoView();
         } else if (scrollY >= pHeight * 2 && scrollY < pHeight * 3) {
-            document.getElementById('section-car-2').scrollIntoView({
-                behavior: "smooth"
-            });
+            document.getElementById('section-car-2').scrollIntoView();
+            CarSectionTransition();
         } else if (scrollY >= pHeight * 3 && scrollY < pHeight * 4) {
-            document.getElementById('section-car-3').scrollIntoView({
-                behavior: "smooth"
-            });
+            document.getElementById('section-car-3').scrollIntoView();
         } else if (scrollY >= pHeight * 4 && scrollY <= pHeight * 5) {
-            document.getElementById('section-car-4').scrollIntoView({
-                behavior: "smooth"
-            });
+            document.getElementById('section-car-4').scrollIntoView();
         }
     }
 
@@ -147,3 +142,19 @@ window.addEventListener('scroll', () => {
             break;
     }
 })
+
+const CarSectionTransition = () => {
+    buttonDiv.removeChild(learnMoreButton);
+    buttonDiv.appendChild(orderButton);
+    buttonDiv.appendChild(inventoryButton);
+    buttonDiv.style.justifyContent = "space-between";
+    testDriveDiv.appendChild(testDrive);
+}
+
+const SolarAndPowerwallSectionTransition = () => {
+    buttonDiv.removeChild(inventoryButton);
+    buttonDiv.removeChild(orderButton);
+    buttonDiv.appendChild(learnMoreButton);
+    buttonDiv.style.justifyContent = "center";
+    testDriveDiv.removeChild(testDrive);
+}
